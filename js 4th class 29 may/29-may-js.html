@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Number 1</label>
+    <input type="text" id="n1">
+    <label for="">Number 2</label>
+    <input type="text" id="n2" >
+    <label for="">Number 3</label>
+    <input type="text" id="n3">
+
+    <button onclick="findMaxNumber()" >Max</button>
+    <button onclick="findMinNumber()" >Min</button>
+    
+    <p id="result">Result</p>
+    
+  
+
+
+
+
+
+
+
+    <script>
+          function findMaxNumber(){
+          let n1=document.getElementById("n1").value;
+          let n2=document.getElementById("n2").value;
+          let n3=document.getElementById("n3").value;
+
+          if(n1<n2 && n1<n3){
+            doccument.getElementById("result").innerHTML="Max no is "+n1;
+          }
+          else if{
+            doccument.getElementById("result").innerHTML="Max no is "+n3;
+          }
+          else{
+            doccument.getElementById("result").innerHTML="Max no is "+n3;
+          }
+
+        }
+          function findMinNumber(){
+          let n1=document.getElementById("n1").value;
+          let n2=document.getElementById("n2").value;
+          let n3=document.getElementById("n3").value;
+          
+
+
+          if(n3>n2 && n3<n1 ){
+            doccument.getElementById("result").innerHTML="Max no is "+n1;
+          }
+          else if{
+            doccument.getElementById("result").innerHTML="Max no is "+n2;
+          }
+          else{
+            doccument.getElementById("result").innerHTML="Max no is "+n3;
+          }
+        }
+       
+    </script>
+</body>
+</html>
