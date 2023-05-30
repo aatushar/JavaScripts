@@ -5,7 +5,8 @@
 //     m=n*i
 //     console.log(n+"x"+i+"="+m)
 // }
-// #2test-whil-loop
+// #2test-while-loop
+
 // let n=1;
 
 // while(n<+10){
