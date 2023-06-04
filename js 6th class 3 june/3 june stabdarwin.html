@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="white">
+    <center> <p>
+        <h2>window Control</h2>
+        <form action="">
+            <input type="button" name="openBut " value="Click to Open New Window"
+            onclick="GetStanWin()"><p>
+                <input type="button" name="mvbyBut" value="Click to move rlative" >
+            </p>
+            <input type="button" name="mvtoBut " value="Click to move avsolute"
+            onclick="moveAbs()"><p>
+                <input type="button" name="shinkBut" value="Click to move rlative
+                size." onclick="shrink()">
+          <p>
+            <input type="button" name="shrivelBut" value="Click to chenge 
+           absolute size." onclick="shrivel()"> <p>
+
+        </form>
+    </p> </center>
+    
+    <script language ="javaScript">
+        function GetStanWin(){
+            open("sampWin.html","sampwin","toolbar=no,width=200,height=150")
+        }
+        function moveRel(){
+            moveBy(20,20)
+        }
+        function moveRel(){
+            moveBy(20,20)
+        }
+        function moveRel(){
+            moveBy(15,10)
+        }
+        function moveRel(){
+            moveBy(400,300)
+        }
+        
+    </script>
+</body>
+</html>

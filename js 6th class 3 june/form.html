@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+    <form action="form-result.html"></form>
+    <label >Name</label>
+    <input type="text" id="name">
+
+    <label >Email</label>
+    <input type="text" id="email">
+
+    <label >Password</label>
+    <input type="text" id="password">
+
+    <label for="">Gender</label>
+    <input type="radio" name="gender" value="Male">Male
+    <input type="radio" name="gender" value="email">Female
+    <input type="radio" name="gender" value="Male">Other
+
+    <input type="submit" value="Submit">
+
+</pre>
+<script>
+    function dataTransfer(){
+    const name=document.getElementById("name").value;
+    const email=document.getElementById("name").value;
+    const password=document.getElementById("password").value;
+    
+    localStorage.setItem("st_name",name);
+    localStorage.setItem("st_email",email)
+    localStorage.setItem("st_password",password)
+}
+</script>
+</body>
+</html>
