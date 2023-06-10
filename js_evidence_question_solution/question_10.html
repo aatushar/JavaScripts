@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <h1>Discount in Parcentage</h1>
+  <label for="unit-price">Unit Price:</label>
+  <input type="number" id="unit-price" >
+  
+  <br><br>
+  <label for="quantity">Quantity:</label>
+  <input type="number" id="quantity">
+  <br><br>
+  <label for="total-price">Total Price:</label>
+  <input type="text" id="total-price" >
+  <br><br>
+  <label for="discount">Discount Percentage:</label>
+  <input type="text" id="discount" >
+  <br><br>
+  <label for="payable">Payable Amount:</label>
+  <input type="text" id="payable" >
+  <br><br>
+  <button onclick="calculatePrice()">Calculate</button>
+<script>
+    function calculatePrice() {
+     
+let unitPrice = parseFloat(document.getElementById("unit-price").value);
+let quantity = parseInt(document.getElementById("quantity").value);
+
+     
+      let totalPrice = unitPrice * quantity;
+
+    
+      let discountPercentage = 0;
+      if (totalPrice >= 0 && totalPrice <= 500) {
+        discountPercentage = 5;
+      } else if (totalPrice > 500 && totalPrice <= 1000) {
+        discountPercentage = 7;
+      } else if (totalPrice > 1000 && totalPrice <= 100000000000) {
+        discountPercentage = 10;
+      }
+
+      
+      let discountAmount = (totalPrice * discountPercentage) / 100;
+      let payableAmount = totalPrice - discountAmount;
+
+      
+      document.getElementById("total-price").value = totalPrice.toFixed(2);
+      document.getElementById("discount").value = discountPercentage + "%";
+      document.getElementById("payable").value = payableAmount.toFixed(2);
+    }
+</script>
+</body>
+</html>
