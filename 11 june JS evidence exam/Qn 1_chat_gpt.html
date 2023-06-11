@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trainee Data Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      text-align: center;
+    }
+    .container {
+      width: 400px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .form-group input[type="text"],
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+    }
+    .form-group input[type="checkbox"] {
+      margin-top: 5px;
+    }
+    .form-group input[type="submit"],
+    .form-group input[type="reset"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function showData() {
+      var name = document.getElementById('name').value;
+      var contact = document.getElementById('contact').value;
+      var remarks = document.getElementById('remarks').value;
+      var sex = document.querySelector('input[name="sex"]:checked').value;
+      var courses = document.querySelectorAll('input[name="courses[]"]:checked');
+      var selectedCourses = [];
+      for (var i = 0; i < courses.length; i++) {
+        selectedCourses.push(courses[i].value);
+      }
+      var location = document.getElementById('location').value;
+      
+      var formattedData = "Name: " + name + "\n" +
+                          "Contact: " + contact + "\n" +
+                          "Remarks: " + remarks + "\n" +
+                          "Sex: " + sex + "\n" +
+                          "Courses: " + selectedCourses.join(", ") + "\n" +
+                          "Location: " + location;
+      
+      // Open a new window to display the data
+      var newDataWindow = window.open("", "_blank");
+      newDataWindow.document.write("<pre>" + formattedData + "</pre>");
+    }
+    
+    function resetForm() {
+      document.getElementById('traineeForm').reset();
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Trainee Data Form</h2>
+    <form id="traineeForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" required>
+      </div>
+      <div class="form-group">
+        <label for="remarks">Remarks:</label>
+        <textarea id="remarks" name="remarks"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="sex">Sex:</label>
+        <input type="radio" id="male" name="sex" value="Male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="sex" value="Female" required>
+        <label for="female">Female</label>
+      </div>
+      <div class="form-group">
+        <label for="courses">Courses:</label>
+        <input type="checkbox" id="nt" name="courses[]" value="NT">
+        <label for="nt">NT</label>
+        <input type="checkbox" id="iad" name="courses[]" value="IAD">
+        <label for="iad">IAD</label>
+        <input type="checkbox" id="ddd" name="courses[]" value="DDD">
+        <label for="ddd">DDD</label>
+        <input type="checkbox" id="esad" name="courses[]" value="ESAD">
+        <label for="esad">ESAD</label>
+      </div>
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <select id="location" name="location" required>
+          <option value="">Select location</option>
+          <option value="Banani">Banani</option>
+          <option value="Dhanmondi">Dhanmondi</option>
+          <option value="Mirpur">Mirpur</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Submit" onclick="showData()">
+        <input type="reset" value="Reset" onclick="resetForm()">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

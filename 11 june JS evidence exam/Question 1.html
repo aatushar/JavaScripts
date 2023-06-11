@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qn 1</title>
+    
+  
+</head>
+<body>
+   
+    <div class="container">
+        <h2>Trainee Data Form</h2>
+        <form id="traineeForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" required>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="remarks">Remarks:</label>
+            <textarea id="remarks" name="remarks"></textarea>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="sex">Sex:</label>
+            <input type="radio" id="male" name="sex" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="sex" value="Female" required>
+            <label for="female">Female</label>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="courses">Courses:</label>
+            <input type="checkbox" id="nt" name="courses[]" value="NT">
+            <label for="nt">NT</label>
+            <input type="checkbox" id="iad" name="courses[]" value="IAD">
+            <label for="iad">IAD</label>
+            <input type="checkbox" id="ddd" name="courses[]" value="DDD">
+            <label for="ddd">DDD</label>
+            <input type="checkbox" id="esad" name="courses[]" value="ESAD">
+            <label for="esad">ESAD</label>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="location">Location:</label>
+            <select id="location" name="location" required>
+              <option value="">Select location</option>
+              <option value="Banani">Banani</option>
+              <option value="Dhanmondi">Dhanmondi</option>
+              <option value="Mirpur">Mirpur</option>
+            </select>
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="submit" value="Submit" onclick="showData()">
+            <input type="reset" value="Reset" onclick="resetForm()">
+          </div>
+        </form>
+      </div>
+
+      <script>
+        function showData() {
+          let name = document.getElementById('name').value;
+          let contact = document.getElementById('contact').value;
+          let remarks = document.getElementById('remarks').value;
+          let sex = document.querySelector('input[name="sex"]:checked').value;
+          let courses = document.querySelectorAll('input[name="courses[]"]:checked');
+          let selectedCourses = [];
+          for (let i = 0; i < courses.length; i++) {
+            selectedCourses.push(courses[i].value);
+          }
+          let location = document.getElementById('location').value;
+          
+          let formattedData = "Name: " + name + "\n" +
+                              "Contact: " + contact + "\n" +
+                              "Remarks: " + remarks + "\n" +
+                              "Sex: " + sex + "\n" +
+                              "Courses: " + selectedCourses.join(", ") + "\n" +
+                              "Location: " + location;
+          
+          
+          let newDataWindow = window.open("", "_blank");
+          newDataWindow.document.write("<pre>" + formattedData + "</pre>");
+        }
+        
+        function resetForm() {
+          document.getElementById('traineeForm').reset();
+        }
+      </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qn 5</title>
+</head>
+<body>
+    <pre>
+    <h1>Price Discount Calculator</h1>
+  <label for="priceInput">Price:</label>
+  <input type="number" id="priceInput" oninput="calculateDiscountedPrice()">
+  <br>
+  <label for="discountInput">Discount Percentage:</label>
+  <input type="number" id="discountInput" oninput="calculateDiscountedPrice()">
+  <br>
+  <div id="result"></div>
+</pre>
+  <script>
+    function calculateDiscountedPrice() {
+     
+      var price = parseFloat(document.getElementById("priceInput").value);
+      var discountPercentage = parseFloat(document.getElementById("discountInput").value);
+
+      
+      var discountAmount = (price * discountPercentage) / 100;
+      var discountedPrice = price - discountAmount;
+
+    
+      document.getElementById("result").innerHTML = "Price after Discount: " + discountedPrice;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Address Validation</title>
+  <script>
+    function validateEmail() {
+      // Prompt the user to enter an email address
+      var emailAddress = prompt("Enter your email address:");
+
+      // Check if the email address contains both "@" and "." symbols
+      if (emailAddress.includes("@") && emailAddress.includes(".")) {
+        alert("Email Address is correct");
+      } else {
+        alert("Email Address is wrong");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Email Address Validation</h1>
+  <button onclick="validateEmail()">Check Email Address</button>
+</body>
+</html>

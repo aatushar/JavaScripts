@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qn 4</title>
+</head>
+<body>
+    <pre>
+    <h1>Max and Min Numbers</h1>
+  <label for="number1Input">Number 1:</label>
+  <input type="number" id="number1Input">
+  <br>
+  <label for="number2Input">Number 2:</label>
+  <input type="number" id="number2Input">
+  <br>
+  <label for="number3Input">Number 3:</label>
+  <input type="number" id="number3Input">
+  <br>
+  <button onclick="findMaxAndMin()">Find Max and Min</button>
+  <div id="result"></div>
+</pre>
+  <script>
+    function findMaxAndMin() {
+
+      let number1 = parseFloat(document.getElementById("number1Input").value);
+      let number2 = parseFloat(document.getElementById("number2Input").value);
+      let number3 = parseFloat(document.getElementById("number3Input").value);
+
+     
+      var max = Math.max(number1, number2, number3);
+
+      
+      var min = Math.min(number1, number2, number3);
+
+    
+      document.getElementById("result").innerHTML = "Maximum: " + max + "<br>Minimum: " + min;
+    }
+  </script>
+</body>
+</html>
