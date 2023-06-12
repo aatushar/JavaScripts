@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="idb" >
+        <label>Name</label>
+        <input type="text" id="name"><br>
+
+        <label>Contact</label>
+        <input type="text" id="contact"><br>
+
+        <label for="">Remarks</label><br>
+        <textarea name="" id="remarks" cols="30" rows="5"></textarea><br>
+
+        <label for="">Gender</label>
+        <input type="radio"  name="gender" value="Male">Male
+        <input type="radio"  name="gender" value="Female">Female <br>
+
+        
+
+        <label for="">sub</label>
+
+        <select name="subject" id="subject">
+            <option value="none">--select one--</option>
+            <option value="jee">JEE</option>
+            <option value="html">HTML</option>
+            <option value="css ">CSS</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="reset">
+    </form>
+
+    <script>
+        function dataTransfer(event){
+            event.preventDefault();
+
+            const name= document.getElementById("name").value;
+            const contact= document.getElementById("contact").value;
+            const remarks= document.getElementById("remarks").value;
+            const gender=  document.querySelector('input[type=radio]:checked').value;
+            const sub=document.getElementById("subject").value;
+            
+            
+            
+
+
+          let  output = "Name: " + name + "<br>";            
+            output += "Contact: " + contact + "<br>";
+            output += "Remarks : " + remarks + "<br>";
+            output += "Gender : " + gender + "<br>";
+            output += "Subject : " + sub + "<br>";
+            
+
+            
+            let newWindow = window.open('', '_blank');
+            newWindow.document.write('<pre>' + output + '</pre>');
+        }
+
+        let form = document.getElementById('idb');
+        form.addEventListener('submit', dataTransfer);
+
+    </script>
+        
+    
+</body>
+</html>
